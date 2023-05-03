@@ -530,9 +530,12 @@ if (updating) {
 }
 refs.formInp.addEventListener("submit", (e)=>{
     e.preventDefault();
-    console.log(saveObj);
-    localStorage.clear();
-    refs.formInp.reset();
+    if (refs.emailInp.value === "" || refs.messageInp.value === "") alert("\u0411\u0443\u0434\u044C \u043B\u0430\u0441\u043A\u0430, \u0437\u0430\u043F\u043E\u0432\u043D\u0456\u0442\u044C \u0443\u0441\u0456 \u043F\u043E\u043B\u044F \u0444\u043E\u0440\u043C\u0438!");
+    else {
+        console.log(saveObj);
+        localStorage.removeItem(STOREGE_KEY);
+        refs.formInp.reset();
+    }
 });
 
 },{"lodash.throttle":"bGJVT"}],"bGJVT":[function(require,module,exports) {

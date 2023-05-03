@@ -11,7 +11,6 @@ let saveObj = {
   email: 'email',
   message: 'message',
 };
-
 refs.formInp.addEventListener('input', throttle(saveMassege, 500));
 function saveMassege() {
   saveObj = {
@@ -29,7 +28,11 @@ if (updating) {
 }
 refs.formInp.addEventListener('submit', e => {
   e.preventDefault();
-  console.log(saveObj);
-  localStorage.clear();
-  refs.formInp.reset();
+  if (refs.emailInp.value === '' || refs.messageInp.value === '') {
+    alert('Будь ласка, заповніть усі поля форми!');
+  } else {
+    console.log(saveObj);
+    localStorage.removeItem(STOREGE_KEY);
+    refs.formInp.reset();
+  }
 });

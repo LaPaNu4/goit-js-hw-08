@@ -512,7 +512,7 @@ var _simpleLightboxMinCss = require("simplelightbox/dist/simple-lightbox.min.css
 // Change code below this line
 console.log((0, _galleryItems.galleryItems));
 const galleryEL = document.querySelector(".gallery");
-const galleryItemEl = (0, _galleryItems.galleryItems).map((item)=>`<li class="gallery__item">
+const galleryItemEl = (0, _galleryItems.galleryItems).map((item)=>`<li class="gallery__item" style="list-style: none">
   <a class="gallery__link" href="${item.original}">
     <img
       class="gallery__image"
@@ -527,12 +527,8 @@ const options = {
     captionDelay: 250
 };
 const lightbox = new (0, _simplelightboxDefault.default)(".gallery a", options);
-const listLi = document.querySelectorAll(".gallery__item");
-listLi.forEach((element)=>{
-    element.style.listStyle = "none";
-});
 
-},{"./gallery-items":"e9dXm","../node_modules/simplelightbox":"9ydBq","simplelightbox/dist/simple-lightbox.min.css":"kaxSc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e9dXm":[function(require,module,exports) {
+},{"./gallery-items":"e9dXm","simplelightbox/dist/simple-lightbox.min.css":"kaxSc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../node_modules/simplelightbox":"9ydBq"}],"e9dXm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "galleryItems", ()=>galleryItems);
@@ -614,7 +610,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"9ydBq":[function(require,module,exports) {
+},{}],"kaxSc":[function() {},{}],"9ydBq":[function(require,module,exports) {
 /*!
 	By André Rinas, www.andrerinas.de
 	Documentation, www.simplelightbox.com
@@ -2099,6 +2095,6 @@ var _default = SimpleLightbox;
 exports["default"] = _default;
 global.SimpleLightbox = SimpleLightbox;
 
-},{}],"kaxSc":[function() {},{}]},["1dg96","9de4I"], "9de4I", "parcelRequired7c6")
+},{}]},["1dg96","9de4I"], "9de4I", "parcelRequired7c6")
 
 //# sourceMappingURL=01-gallery.3c638b0b.js.map

@@ -8,7 +8,7 @@ console.log(galleryItems);
 const galleryEL = document.querySelector('.gallery');
 const galleryItemEl = galleryItems
   .map(
-    item => `<li class="gallery__item">
+    item => `<li class="gallery__item" style="list-style: none">
   <a class="gallery__link" href="${item.original}">
     <img
       class="gallery__image"
@@ -26,7 +26,3 @@ const options = {
   captionDelay: 250,
 };
 const lightbox = new SimpleLightbox('.gallery a', options);
-const listLi = document.querySelectorAll('.gallery__item');
-listLi.forEach(element => {
-    element.style.listStyle='none'
-});
